@@ -24,70 +24,67 @@
     <div>
         <p id="myFirstName">
             <script>
-            const firstName = "HET"; 
+                const firstName = "HET"; 
     
-            const question2Text = document.getElementById("myFirstName");
-            
-            question2Text.textContent = firstName;
-       </script>
-            </p>
+    const question2Text = document.getElementById("myFirstName");
+    
+    question2Text.textContent = firstName;
+                </script>
+        </p>
     </div>
-    <!-- Question 3 -->
 
+    <!-- Question 3 -->
+    
     <div>
         <p class="question3">
             <script>
-            let sentenceDot = "Employee Name: " + Biff[0] + " " + Henderson[1] +
-    ", Employee Number: " + 30573 +
-    ", Department: " + employee.department +
-    ", Interests: " + employee.interests.join(', ') +
-    ", Active: " + employee.active;
+                let employee = {
+        name: ['Biff', 'Henderson'],
+        employeeNumber: 30573,
+        department: 'Repossessions',
+        interests: ['the Mob', 'fast cars', 'baseball'],
+        active: true
+    };
 
-    document.querySelector('.question3').textContent = sentenceDot + '<br>' + sentenceBracket;
-       </script>
-    </p>
+    // Concatenate information to form an interesting sentence
+    let sentence = `${employee.name[0]} ${employee.name[1]} is an employee with number ${employee.employeeNumber} in the ${employee.department} department. They are interested in ${employee.interests.join(', ')}. Currently, they are ${employee.active ? 'active' : 'inactive'}.`;
+
+    document.querySelector('.question3').textContent = sentence;
+            </script>
+        </p>
     </div>
-    <!-- Question 4 -->
 
-        <div>
-        
+    <!-- Question 4 -->
+    <div>
         <p id="question4">
             <script>
-            // Create a new instance of the Coffee object
-const myCoffee = new Coffee('latte', 'large');
+                const question4Para = document.querySelector('#question4');
 
-// Call the coffeeOrder method to output the coffee order
+// Define the Coffee class
+class Coffee {
+    constructor(type, size) {
+        this.type = type;
+        this.size = size;
+    }
+
+    // Method to order a coffee
+    coffeeOrder() {
+        question4Para.textContent = `You have ordered a ${this.size} ${this.type} coffee.`;
+    }
+}
+
+// Create a new instance of the Coffee object
+const myCoffee = new Coffee('latte', 'medium');
+
+// Call the coffeeOrder method to output your coffee order
 myCoffee.coffeeOrder();
-
-// Comment:
-// We create a new instance of the Coffee class named myCoffee.
-// The Coffee class has a constructor that takes two parameters: type and size.
-// We pass 'latte' as the type and 'large' as the size for our coffee order.
-// We then call the coffeeOrder method, which updates the text content of the paragraph with id 'question4' to display the coffee order.
-       </script>
-</p>
-        
+            </script>
+        </p>
     </div>
+    
     <!-- Question 5 -->
     <div>
-        <p class="question5">
-            <script>
-                let sandwich3 = {
-                bread: 'multigrain',
-                meat: 'sliced turkey',
-                vegetables: {
-                    tomatoes: 'roma',
-                    lettuce: 'romaine',
-                    pickles: 'kosher dill'
-                },
-                spread: 'garlic mayonnaise'
-            };
-
-            document.querySelector('.question5').textContent = sandwich3.vegetables.tomatoes;
-     
-            </script>
-
-        </p>
+        <p class="question5"></p>
     </div>
     <!-- Question 7d -->
     <div id="question7d"></div>
