@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 2 | COMP1073 Client-Side JavaScript</title>
+    <!-- Add script here (Question 1) -->
+    <script src="scripts.js"></script>
+
+
+    <!-- Add css here (Question 8) -->
+
+</head>
+
+<body>
+    <!-- Do not change the html below this line -->
+    <!-- If you want, use the script to add or remove tags or data -->
+    <div>
+        <h1>Test 2</h1>
+    </div>
+    <!-- Question 2 -->
+    
+    <div>
+        <p id="myFirstName">
+            <script>
+            const firstName = "HET"; 
+    
+            const question2Text = document.getElementById("myFirstName");
+            
+            question2Text.textContent = firstName;
+       </script>
+            </p>
+    </div>
+    <!-- Question 3 -->
+
+    <div>
+        <p class="question3">
+            <script>
+            let sentenceDot = "Employee Name: " + employee.name[0] + " " + employee.name[1] +
+    ", Employee Number: " + employee.employeeNumber +
+    ", Department: " + employee.department +
+    ", Interests: " + employee.interests.join(', ') +
+    ", Active: " + employee.active;
+
+    document.querySelector('.question3').textContent = sentenceDot + '<br>' + sentenceBracket;
+       </script>
+    </p>
+    </div>
+    <!-- Question 4 -->
+
+        <div>
+        
+        <p id="question4">
+            <script>
+            // Create a new instance of the Coffee object
+const myCoffee = new Coffee('latte', 'large');
+
+// Call the coffeeOrder method to output the coffee order
+myCoffee.coffeeOrder();
+
+// Comment:
+// We create a new instance of the Coffee class named myCoffee.
+// The Coffee class has a constructor that takes two parameters: type and size.
+// We pass 'latte' as the type and 'large' as the size for our coffee order.
+// We then call the coffeeOrder method, which updates the text content of the paragraph with id 'question4' to display the coffee order.
+       </script>
+</p>
+        
+    </div>
+    <!-- Question 5 -->
+    <div>
+        <p class="question5">
+            <script>
+                let sandwich3 = {
+                bread: 'multigrain',
+                meat: 'sliced turkey',
+                vegetables: {
+                    tomatoes: 'roma',
+                    lettuce: 'romaine',
+                    pickles: 'kosher dill'
+                },
+                spread: 'garlic mayonnaise'
+            };
+
+            // Access the type of tomatoes and output it to the question5 paragraph
+            document.querySelector('.question5').textContent = sandwich3.vegetables.tomatoes;
+     
+            </script>
+
+        </p>
+    </div>
+    <!-- Question 7d -->
+    <div id="question7d"></div>
+    <!-- Question 7e -->
+    <div id="question7e"></div>
+</body>
+
+</html>
