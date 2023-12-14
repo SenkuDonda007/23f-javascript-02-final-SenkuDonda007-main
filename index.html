@@ -81,10 +81,28 @@ myCoffee.coffeeOrder();
             </script>
         </p>
     </div>
-    
+
     <!-- Question 5 -->
     <div>
-        <p class="question5"></p>
+        <p class="question5">
+            <script>
+                let sandwich3 = {
+                    bread: 'multigrain',
+                    meat: 'sliced turkey',
+                    vegetables: {
+                        tomatoes: 'roma',
+                        lettuce: 'romaine',
+                        pickles: 'kosher dill'
+                    },
+                    spread: 'garlic mayonnaise'
+                };
+        
+                let tomatoesType = sandwich3.vegetables.tomatoes;
+        
+                // Output the result of tomatoes. i.e. "roma" 
+                document.querySelector('.question5').textContent = tomatoesType;
+          </script>
+        </p>
     </div>
     <!-- Question 7d -->
     <div id="question7d"></div>
