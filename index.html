@@ -84,26 +84,28 @@ myCoffee.coffeeOrder();
 
     <!-- Question 5 -->
     <div>
-        <p class="question5"></p>
-        <script>
-            // Consider the following JavaScript:
-            let sandwich3 = {
-                bread: 'multigrain',
-                meat: 'sliced turkey',
-                vegetables: {
-                    tomatoes: 'roma',
-                    lettuce: 'romaine',
-                    pickles: 'kosher dill'
-                },
-                spread: 'garlic mayonnaise'
-            };
+        <p class="question5">
+            <script>
+                let sandwich3 = {
+                    bread: 'multigrain',
+                    meat: 'sliced turkey',
+                    vegetables: {
+                        tomatoes: 'roma',
+                        lettuce: 'romaine',
+                        pickles: 'kosher dill'
+                    },
+                    spread: 'garlic mayonnaise'
+                };
     
-            let tomatoesType = sandwich3.vegetables.tomatoes;
+                // Access the type of tomatoes used in the sandwich3 object
+                const tomatoesType = sandwich3.vegetables.tomatoes;
     
-            // Output the result of tomatoes. i.e. "roma" 
-            document.querySelector('.question5').textContent = `The type of tomatoes is "${tomatoesType}".`;
-        </script>
+                // Output the result to the question5 paragraph
+                document.querySelector('.question5').textContent = tomatoesType;
+            </script>
+        </p>
     </div>
+    
     <!-- Question 7d -->
     <div id="question7d"></div>
     <!-- Question 7e -->
