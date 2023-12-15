@@ -11,6 +11,12 @@
 
     <!-- Add css here (Question 8) -->
 
+    <head>
+        <script src="scripts.js"></script>
+    
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    
 </head>
 
 <body>
@@ -129,15 +135,111 @@ car1.description();
     <img src="car.jpg" alt="Car Image" style="max-width: 100%; height: auto;">
 
     <script>
-        const studentID = "200520505"; 
-        const baseURL = "https://lamp.computerstudi.es/~PriyanshPriyansh001/js02/test2/api/users.php";
-        const personalizedURL = `${baseURL}?api_key=${studentID}`;
+        const studentId = "200520505"; 
+
+// Base URL
+const baseUrl = "https://lamp.computerstudi.es/~PriyanshPriyansh001/js02/test2/api/users.php";
+
+// Personalized URL
+const personalizedUrl = `${baseUrl}?api_key=${studentId}`;
+
+fetch(personalizedUrl)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error("Error fetching data:", error));
+
+    // Create a function that receives the response as a parameter
+function handleApiResponse(response) {
+    console.log(response);
+}
+
+fetch(personalizedUrl)
+    .then(response => response.json())
+    .then(data => handleApiResponse(data))
+    .catch(error => console.error("Error fetching data:", error));
+
     </script>
 
+    
+
     <!-- Question 7d -->
-    <div id="question7d"></div>
+    <div id="question7d">
+        <script>
+function displayPersonalData(data) {
+    const question7dDiv = document.getElementById('question7d');
+
+    const personalIdHeading = document.createElement('200520505');
+    personalIdHeading.textContent = `Received Personal ID: ${data.personalId}`;
+
+    const firstNameHeading = document.createElement('Het');
+    firstNameHeading.textContent = `Received Personal First Name: ${data.firstName}`;
+
+    const lastNameHeading = document.createElement('Kevadiya');
+    lastNameHeading.textContent = `Received Personal Last Name: ${data.lastName}`;
+
+    const imageElement = document.createElement('img');
+    imageElement.src = data.image;
+    imageElement.alt = "Received Personal Image";
+
+    question7dDiv.appendChild(personalIdHeading);
+    question7dDiv.appendChild(firstNameHeading);
+    question7dDiv.appendChild(lastNameHeading);
+    question7dDiv.appendChild(imageElement);
+}
+
+// Call the function in the fetch chain
+fetch(personalizedUrl)
+    .then(response => response.json())
+    .then(data => displayPersonalData(data))
+    .catch(error => console.error("Error fetching data:", error));
+
+        </script>
+    </div>
     <!-- Question 7e -->
-    <div id="question7e"></div>
+    <div id="question7e">
+        <script>
+function displayRandomData(data) {
+    const question7eDiv = document.getElementById('question7e');
+
+    const table = document.createElement('table');
+    const thead = document.createElement('thead');
+    const tbody = document.createElement('tbody');
+
+    const headers = Object.keys(data.randomData[0]);
+
+    // Create table header
+    const headerRow = document.createElement('tr');
+    headers.forEach(header => {
+        const th = document.createElement('th');
+        th.textContent = header;
+        headerRow.appendChild(th);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    data.randomData.forEach(item => {
+        const row = document.createElement('tr');
+        headers.forEach(header => {
+            const td = document.createElement('td');
+            td.textContent = item[header];
+            row.appendChild(td);
+        });
+        tbody.appendChild(row);
+    });
+
+    table.appendChild(tbody);
+    question7eDiv.appendChild(table);
+}
+
+// Call the function in the fetch chain
+fetch(personalizedUrl)
+    .then(response => response.json())
+    .then(data => displayRandomData(data))
+    .catch(error => console.error("Error fetching data:", error));
+
+        </script>
+    </div>
 </body>
 
 </html>
